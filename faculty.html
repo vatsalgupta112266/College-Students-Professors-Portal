@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faculty Portal Login</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    <!-- body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .login-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .error-message {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+  }
+</style>
+<body>
+<div class="login-container">
+  <h2>Faculty Portal Login</h2>
+  <form id="login-form" action="#">
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+    </div>
+    <a href="facultyinside.html"><button type="submit">Login</button></a>
+  </form>
+  <div id="error-message" class="error-message"></div>
+</div>
+
+<script src="script.js"></script>
+<script>
+    document.getElementById("login-form").addEventListener("submit", function(event) {
+  event.preventDefault();
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+
+  // You can add your login logic here
+  // For example, you can send a request to the server to authenticate the user
+
+  if (username === "admin" && password === "password") {
+    // Redirect to dashboard or any other page
+    window.location.href = "facultyinside.html";
+  } else {
+    document.getElementById("error-message").innerText = "Invalid username or password";
+  }
+});
+
+</script>
+</body>
+</html>

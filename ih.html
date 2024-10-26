@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Portal - Attendance</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      /* background-color: rgba(182, 169, 169, 0.76); */
+      background-image: url(OIP.jpg);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      width: 400px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .container:hover {
+      transform: scale(1.05);
+    }
+    .attendance {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .attendance-item {
+      margin: 0 10px;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .attendance-item:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Student Portal - Attendance</h2>
+    <div class="attendance">
+      <div class="attendance-item">2024-04-01</div>
+      <div class="attendance-item">2024-04-02</div>
+      <div class="attendance-item">2024-04-03</div>
+      <div class="attendance-item">2024-04-04</div>
+      <div class="attendance-item">2024-04-05</div>
+    </div>
+    <div id="attendanceDetail"></div>
+  </div>
+
+  <script>
+    const attendanceItems = document.querySelectorAll('.attendance-item');
+    const attendanceDetail = document.getElementById('attendanceDetail');
+    
+    attendanceItems.forEach(item => {
+      item.addEventListener('click', () => {
+        // Simulate fetching attendance details
+        const date = item.textContent.trim();
+        const attendance = getAttendance(date); // Function to get attendance data
+        renderAttendance(attendance);
+      });
+    });
+    
+    function getAttendance(date) {
+      // Here you can fetch attendance data from your server/database
+      // For simplicity, let's just return some sample data
+      const attendanceData = {
+        "2024-04-01": "Present",
+        "2024-04-02": "Absent",
+        "2024-04-03": "Present",
+        "2024-04-04": "Present",
+        "2024-04-05": "Absent"
+      };
+      return attendanceData[date];
+    }
+    
+    function renderAttendance(attendance) {
+  attendanceDetail.innerHTML = `<p>Attendance: ${attendance}</p>`;
+}
+  </script>
+</body>
+</html>

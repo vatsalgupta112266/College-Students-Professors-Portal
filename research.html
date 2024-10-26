@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research Page</title>
+  <!-- <link rel="stylesheet" href="styles.css"> -->
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+ 
+}
+
+header {
+    background: linear-gradient(45deg, #106e8182, #08445194);
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+.content{
+    text-transform: capitalize;
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.research-item {
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px;
+  width: 300px;
+  transition: transform 0.3s ease;
+}
+
+.research-item:hover {
+  transform: translateY(-5px);
+}
+
+.research-item h2 {
+  margin-top: 0;
+}
+.v1{
+    position: absolute;
+    
+}
+main{
+    position: absolute;
+    z-index: 99;
+}
+
+.read-more {
+  display: inline-block;
+  background-color: #333;
+  color: #fff;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.read-more:hover {
+  background-color: #555;
+}
+h3{
+    text-decoration: underline;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Research Page</h1>
+  </header>
+  <main>
+    <section class="research-item">
+      <h2>Research Topic 1</h2>
+      <h3> Maze solver bot</h3>
+      <p class="content">it is a human following bot.It was made under autorob club . it was further modified to convert it into a bluetooth controlled bot by using HC-05 and aurdino nano </p>
+      <a href="#" class="read-more">Read More</a>
+    </section>
+    <section class="research-item">
+      <h2>Research Topic 2</h2>
+      <h3>Remote control plane</h3>
+      <p class="content">it is a rC plane which is controlled by a transmitter receiver. It was made under aeroclub.Its fabrication was done using syrofoam sheets. </p>
+      <a href="#" class="read-more">Read More</a>
+    </section>
+  </main>
+
+  <video class="v1" loop muted autoplay src="https://cdn.pixabay.com/video/2023/12/06/192281-892475127_large.mp4"></video>
+  </body>
+
+  <script>
+    // Smooth scroll effect
+    document.querySelectorAll('.read-more').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Fade-in animation on scroll
+    const researchItems = document.querySelectorAll('.research-item');
+
+    function isInViewport(element) {
+      const rect = element.getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+    }
+
+    function animateElements() {
+      researchItems.forEach(item => {
+        if (isInViewport(item)) {
+          item.classList.add('visible');
+        } else {
+          item.classList.remove('visible');
+        }
+      });
+    }
+
+    document.addEventListener('scroll', animateElements);
+    animateElements(); // Initial check
+
+  </script>
+
+</body>
+</html>

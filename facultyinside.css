@@ -1,0 +1,30 @@
+body {
+    line-height: 1.6;
+    margin: 2em;
+    margin-left: 25vw;
+    margin-top: 20vh;
+    background-color: rgb(130, 169, 156);
+
+}
+
+th {
+    background-color:#4CAF50;
+    color: #fff;
+    padding: 0.5em 1em;
+}
+
+td {
+    border-top: 1px solid #eee;
+    padding: 0.5em 1em;
+}
+
+input {
+    cursor: pointer;
+}
+
+
+
+
+.name-col {
+    text-align: left;
+}
